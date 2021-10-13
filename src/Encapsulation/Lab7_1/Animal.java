@@ -14,8 +14,6 @@ public class Animal {
     private final boolean wings;
     private final boolean isAllowToRace;
     private final int selectSpeed;
-
-    //Static Fields
     private final RandomSpeedGenerator randomSpeedGenerator;
 
     private Animal(AnimalBuilder animalBuilder) {
