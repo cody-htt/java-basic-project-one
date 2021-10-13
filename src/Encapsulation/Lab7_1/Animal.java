@@ -88,6 +88,7 @@ public class Animal {
         public Animal build() {
             validateAnimeIsAllowed();
             validateAnimalObject();
+            validateSpeedRange();
 
             return new Animal(this);
         }
@@ -109,6 +110,15 @@ public class Animal {
          */
         private void validateAnimalObject () {
             if (this.name == null || this.type == null) {
+                this.isAllowToRace = false;
+            }
+        }
+
+        /*
+        Validate the speed range is correct
+         */
+        private void validateSpeedRange() {
+            if (this.maxSpeed - this.minSpeed <= 0) {
                 this.isAllowToRace = false;
             }
         }

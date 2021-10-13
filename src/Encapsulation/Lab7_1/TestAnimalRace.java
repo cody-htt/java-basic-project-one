@@ -16,7 +16,7 @@ public class TestAnimalRace {
                 .hasWings(false).isMoveByFeet(true).setMaxSpeed(60).setMinSpeed(20)
                 .build();
 
-        Animal hungryTiger = new Animal.AnimalBuilder("Tiger", "Meat Hunter")
+        Animal hungryTiger = new Animal.AnimalBuilder("Tiger", null)
                 .hasWings(false).isMoveByFeet(true).setMaxSpeed(95).setMinSpeed(45)
                 .build();
 
