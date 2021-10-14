@@ -11,11 +11,11 @@ public class TestLibrary {
 
         //Create some books for testing
         Book book_1 = new Book.BookBuilder()
-                .enterISBN(111111).setBookName("It Ends With Us").whoIsAuthor("Collen Hoover").build();
+                .enterISBN(1000000001).setBookName("It Ends With Us").whoIsAuthor("Collen Hoover").build();
         Book book_2 = new Book.BookBuilder()
-                .enterISBN(222222).setBookName("The Proposal").whoIsAuthor("Jasmin Guillory").build();
+                .enterISBN(1000000002).setBookName("The Proposal").whoIsAuthor("Jasmin Guillory").build();
         Book book_3 = new Book.BookBuilder()
-                .enterISBN(333333).setBookName("Gone With the Wind").whoIsAuthor("Margaret Mitchell").build();
+                .enterISBN(1000000003).setBookName("Gone With the Wind").whoIsAuthor("Margaret Mitchell").build();
 
         //Add the created book to the bookLibraryList
         bookLibraryList.add(0, book_1);

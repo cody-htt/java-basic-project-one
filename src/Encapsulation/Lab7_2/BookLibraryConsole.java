@@ -56,16 +56,20 @@ public class BookLibraryConsole {
     * */
     private void importUserBook() {
         System.out.print("Please enter the book ISBN: ");
-        int ISBN = scanner.nextInt();
+        long ISBN = validateInputISBN();
         scanner.nextLine();
         System.out.print("Please enter the book name: ");
         String bookName = scanner.nextLine();
         System.out.print("Please enter the author name: ");
         String authorName = scanner.nextLine();
-        addNewBookToList(ISBN, bookName, authorName);
+        if (ISBN > 0) {
+            addNewBookToList(ISBN, bookName, authorName);
+        } else {
+            System.out.println("Your book information is invalid");
+        }
     }
 
-    private void addNewBookToList(int ISBN, String bookName, String authorName) {
+    private void addNewBookToList(long ISBN, String bookName, String authorName) {
         Book newBook = new Book.BookBuilder()
                 .enterISBN(ISBN).setBookName(bookName).whoIsAuthor(authorName).build();
         if (checkBookExistence(newBook.getISBN()) == null) {
@@ -76,7 +80,7 @@ public class BookLibraryConsole {
         }
     }
 
-    private Book checkBookExistence (int ISBN) {
+    private Book checkBookExistence (long ISBN) {
         for (Book existBook : this.listOfBook) {
             if (existBook.getISBN() == ISBN) {
                 return existBook;
@@ -126,6 +130,21 @@ public class BookLibraryConsole {
             defaultAction = 0;
         }
         return defaultAction;
+    }
+
+    /* Validate the ISBN from user */
+    private static Long validateInputISBN() {
+        long validISBN = 0L;
+        String inputISBN;
+        try {
+            inputISBN = scanner.next();
+            if (inputISBN.length() == 10) {
+                validISBN = Long.parseLong(inputISBN);
+            }
+        } catch (NumberFormatException error) {
+            validISBN = -1L;
+        }
+        return validISBN;
     }
 
 }

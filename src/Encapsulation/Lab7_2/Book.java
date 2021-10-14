@@ -4,7 +4,7 @@ public class Book {
 
     private final String bookName;
     private final String authorName;
-    private final int ISBN;
+    private final long ISBN;
 
     public Book(BookBuilder bookBuilder) {
         this.bookName = bookBuilder.bookName;
@@ -21,7 +21,7 @@ public class Book {
                 "\"\n=======================================\n";
     }
 
-    public int getISBN() {
+    public long getISBN() {
         return ISBN;
     }
 
@@ -29,7 +29,7 @@ public class Book {
 
         private String bookName;
         private String authorName;
-        private int ISBN;
+        private long ISBN;
 
         public BookBuilder setBookName(String bookName) {
             this.bookName = bookName;
@@ -41,7 +41,7 @@ public class Book {
             return this;
         }
 
-        public BookBuilder enterISBN(int ISBN) {
+        public BookBuilder enterISBN(long ISBN) {
             this.ISBN = ISBN;
             return this;
         }
