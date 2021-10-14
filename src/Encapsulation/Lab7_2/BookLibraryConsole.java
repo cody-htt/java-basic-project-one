@@ -2,12 +2,12 @@ package Encapsulation.Lab7_2;
 
 import java.util.*;
 
-public class Console {
+public class BookLibraryConsole {
 
     private final static Scanner scanner = new Scanner(System.in);
     private final List<Book> listOfBook;
 
-    public Console(List<Book> listOfBook) {
+    public BookLibraryConsole(List<Book> listOfBook) {
         this.listOfBook = listOfBook;
     }
 

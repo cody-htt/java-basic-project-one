@@ -23,7 +23,7 @@ public class TestLibrary {
         bookLibraryList.add(2, book_3);
 
         //Instantiate the libraryConsole object
-        Console libraryConsole = new Console(bookLibraryList);
+        BookLibraryConsole libraryConsole = new BookLibraryConsole(bookLibraryList);
         libraryConsole.openLibraryApp();
 
     }
