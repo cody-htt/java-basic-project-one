@@ -32,7 +32,7 @@ public class BookLibraryConsole {
                     exit = true;
                     break;
                 case 2:
-                    getUserBook();
+                    importUserBook();
                     break;
                 case 3:
                     searchExistBook();
@@ -54,7 +54,7 @@ public class BookLibraryConsole {
     * 1. If the book is not exist, add the book to List
     * 2. If the book is existed, will not add the book to List
     * */
-    private void getUserBook() {
+    private void importUserBook() {
         System.out.print("Please enter the book ISBN: ");
         int ISBN = scanner.nextInt();
         scanner.nextLine();
