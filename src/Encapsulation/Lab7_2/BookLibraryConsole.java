@@ -28,8 +28,7 @@ public class BookLibraryConsole {
             int action = validateUserInput();
             switch (action) {
                 case 1:
-                    System.out.println("Apps will be closed");
-                    exit = true;
+                    exit = isExit();
                     break;
                 case 2:
                     importUserBook();
@@ -119,6 +118,11 @@ public class BookLibraryConsole {
         for (Book book : this.listOfBook) {
             System.out.println(book);
         }
+    }
+
+    private boolean isExit() {
+        System.out.println("Apps will be closed");
+        return true;
     }
 
     /* Validate the selected option from user -> if it is invalid, the default action will always be 0 */
