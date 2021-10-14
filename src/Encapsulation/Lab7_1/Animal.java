@@ -1,38 +1,26 @@
 package Encapsulation.Lab7_1;
 
 import java.security.SecureRandom;
-import java.util.Locale;
 
 public class Animal {
-
-    public final static SecureRandom SECURE_RANDOM = new SecureRandom();
 
     //Final Fields
     private final String name; //Require fields
     private final String type; //Require fields
-    private final boolean feet;
-    private final boolean wings;
+    private final boolean hasFeet;
+    private final boolean hasWings;
     private final boolean isAllowToRace;
-    private final int selectSpeed;
-    private final RandomSpeedGenerator randomSpeedGenerator;
+    private final int speed;
 
     private Animal(AnimalBuilder animalBuilder) {
         this.name = animalBuilder.name;
         this.type = animalBuilder.type;
-        this.feet = animalBuilder.feet;
-        this.wings = animalBuilder.wings;
+        this.hasFeet = animalBuilder.hasFeet;
+        this.hasWings = animalBuilder.hasWings;
         this.isAllowToRace = animalBuilder.isAllowToRace;
-
-        //Declare needed variables
-        int maxSpeed = animalBuilder.maxSpeed;
-        int minSpeed = animalBuilder.minSpeed;
-        this.randomSpeedGenerator = new RandomSpeedGenerator(maxSpeed, minSpeed);
-        this.selectSpeed = setAnimalSpeed();
+        this.speed = animalBuilder.speed;
     }
 
-    private int setAnimalSpeed() {
-        return randomSpeedGenerator.selectRandomSpeed(SECURE_RANDOM);
-    }
 
     public String getName() {
         return name;
@@ -46,18 +34,22 @@ public class Animal {
         return isAllowToRace;
     }
 
-    public int getSelectSpeed() {
-        return selectSpeed;
+    public int getSpeed() {
+        return speed;
     }
 
     public static class AnimalBuilder {
 
-        private String type; //Require fields
-        private String name; //Require fields
+        //Class Variable
+        private final static SecureRandom SECURE_RANDOM = new SecureRandom();
+
+        private final String type; //Require fields
+        private final String name; //Require fields
         private int maxSpeed;
         private int minSpeed;
-        private boolean feet;
-        private boolean wings;
+        private int speed;
+        private boolean hasFeet;
+        private boolean hasWings;
         private boolean isAllowToRace;
 
         public AnimalBuilder(String type, String name) {
@@ -76,12 +68,12 @@ public class Animal {
         }
 
         public AnimalBuilder isMoveByFeet (boolean feet) {
-            this.feet = feet;
+            this.hasFeet = feet;
             return this;
         }
 
         public AnimalBuilder hasWings (boolean wings) {
-            this.wings = wings;
+            this.hasWings = wings;
             return this;
         }
 
@@ -89,8 +81,14 @@ public class Animal {
             validateAnimeIsAllowed();
             validateAnimalObject();
             validateSpeedRange();
+            this.speed = setAnimalSpeed(this.maxSpeed, this.minSpeed);
 
             return new Animal(this);
+        }
+
+        private int setAnimalSpeed(int maxSpeed, int minSpeed) {
+            RandomSpeedGenerator randomSpeedGenerator = new RandomSpeedGenerator(maxSpeed, minSpeed);
+            return randomSpeedGenerator.selectRandomSpeed(SECURE_RANDOM);
         }
 
         /*
@@ -98,11 +96,9 @@ public class Animal {
         if it is -> NOT ALLOW TO INSTANTIATE THIS ANIMAL !!!
          */
         private void validateAnimeIsAllowed () {
-            if (this.wings && this.feet) {
+            if (!this.hasFeet) {
                 this.isAllowToRace = false;
-            } else if (!this.wings && this.feet) {
-                this.isAllowToRace = true;
-            }
+            } else this.isAllowToRace = !this.hasWings;
         }
 
         /*

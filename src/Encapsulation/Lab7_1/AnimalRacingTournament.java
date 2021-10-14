@@ -20,7 +20,7 @@ public class AnimalRacingTournament {
                 if (winner == null) {
                     winner = animal;
                 } else {
-                    if (winner.getSelectSpeed() < animal.getSelectSpeed()) {
+                    if (winner.getSpeed() < animal.getSpeed()) {
                         winner = animal;
                     }
                 }
