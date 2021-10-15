@@ -114,7 +114,7 @@ public class BookLibraryConsole {
     }
 
     private static void printWarning() {
-        System.out.println("You are allowed to select option from 1 - 4" +
+        System.out.println("You are allowed to select option from 1 - 5" +
                 "\nPlease try again!!!\n");
     }
 
