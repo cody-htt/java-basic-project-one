@@ -106,7 +106,7 @@ public class BookLibraryConsole {
     /* Some services methods for internally invoke */
     private static void printMenu() {
         System.out.print("Hello, please select the below action:\n" +
-                "1. App will be closed\n" +
+                "1. Exit App\n" +
                 "2. Insert new book\n" +
                 "3. Search for a book\n" +
                 "4. Show all books\n" +
