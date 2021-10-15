@@ -24,7 +24,7 @@ public class BookLibraryConsole {
     private void libraryBookEngine() {
         boolean exit = false;
         while (!exit) {
-            System.out.print("Your option: ");
+            System.out.print("Your option (press 5 to view option list): ");
             int action = validateUserInput();
             switch (action) {
                 case 1:
@@ -39,6 +39,9 @@ public class BookLibraryConsole {
                 case 4:
                     printListOfBook();
                     break;
+                case 5:
+                    printMenu();
+                    break;
                 default:
                     printWarning();
                     break;
@@ -47,12 +50,12 @@ public class BookLibraryConsole {
     }
 
     /*The following methods is used to add a new book
-    * After user enter all the information
-    * -> getUserBook() will call addNewBookToList()
-    * -> addNewBookToList() invoke checkBookExistence() to see if the book is already exist in the List
-    * 1. If the book is not exist, add the book to List
-    * 2. If the book is existed, will not add the book to List
-    * */
+     * After user enter all the information
+     * -> getUserBook() will call addNewBookToList()
+     * -> addNewBookToList() invoke checkBookExistence() to see if the book is already exist in the List
+     * 1. If the book is not exist, add the book to List
+     * 2. If the book is existed, will not add the book to List
+     * */
     private void importUserBook() {
         System.out.print("Please enter the book ISBN: ");
         long ISBN = validateInputISBN();
@@ -79,7 +82,7 @@ public class BookLibraryConsole {
         }
     }
 
-    private Book checkBookExistence (long ISBN) {
+    private Book checkBookExistence(long ISBN) {
         for (Book existBook : this.listOfBook) {
             if (existBook.getISBN() == ISBN) {
                 return existBook;
@@ -106,7 +109,8 @@ public class BookLibraryConsole {
                 "1. App will be closed\n" +
                 "2. Insert new book\n" +
                 "3. Search for a book\n" +
-                "4. Show all books\n");
+                "4. Show all books\n" +
+                "5. Show option menu\n");
     }
 
     private static void printWarning() {
