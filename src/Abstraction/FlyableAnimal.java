@@ -63,7 +63,7 @@ public class FlyableAnimal extends Animal {
             return this;
         }
 
-        public FlyableAnimalBuilder checkFlyAbility(boolean isFlyable) {
+        protected FlyableAnimalBuilder checkFlyAbility(boolean isFlyable) {
             this.isFlyable = isFlyable;
             return this;
         }
