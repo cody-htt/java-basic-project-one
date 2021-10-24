@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="poi-4.0.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../2. S3 Project/Test/poi-4.0.0/poi-4.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../2. S3 Project/Test/poi-4.0.0/poi-examples-4.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../2. S3 Project/Test/poi-4.0.0/poi-excelant-4.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../2. S3 Project/Test/poi-4.0.0/poi-ooxml-4.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../2. S3 Project/Test/poi-4.0.0/poi-ooxml-schemas-4.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../2. S3 Project/Test/poi-4.0.0/poi-scratchpad-4.0.0.jar!/" />
+      <root url="file://$PROJECT_DIR$" />
+      <root url="jar://$PROJECT_DIR$/../../2. S3 Project/Test/poi-4.0.0/ooxml-lib/curvesapi-1.05.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../2. S3 Project/Test/poi-4.0.0/ooxml-lib/xmlbeans-3.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/../../2. S3 Project/Test/poi-4.0.0/docs/apidocs" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/src" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/poi-ooxml-4.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

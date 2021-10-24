@@ -6,7 +6,7 @@ public class Book {
     private final String authorName;
     private final long ISBN;
 
-    public Book(BookBuilder bookBuilder) {
+    private Book(BookBuilder bookBuilder) {
         this.bookName = bookBuilder.bookName;
         this.authorName = bookBuilder.authorName;
         this.ISBN = bookBuilder.ISBN;

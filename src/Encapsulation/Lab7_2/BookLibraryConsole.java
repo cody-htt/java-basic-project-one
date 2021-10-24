@@ -72,8 +72,7 @@ public class BookLibraryConsole {
     }
 
     private void addNewBookToList(long ISBN, String bookName, String authorName) {
-        Book newBook = new Book.BookBuilder()
-                .enterISBN(ISBN).setBookName(bookName).whoIsAuthor(authorName).build();
+        Book newBook = new Book.BookBuilder().enterISBN(ISBN).setBookName(bookName).whoIsAuthor(authorName).build();
         if (checkBookExistence(newBook.getISBN()) == null) {
             this.listOfBook.add(newBook);
             System.out.println("The new book has added successfully!!!");

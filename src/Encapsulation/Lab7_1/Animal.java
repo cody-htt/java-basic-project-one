@@ -21,7 +21,6 @@ public class Animal {
         this.speed = animalBuilder.speed;
     }
 
-
     public String getName() {
         return name;
     }
