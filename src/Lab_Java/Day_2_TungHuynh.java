@@ -1,4 +1,4 @@
-package test;
+package Lab_Java;
 
 import org.jetbrains.annotations.NotNull;
 

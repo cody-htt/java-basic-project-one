@@ -1,4 +1,4 @@
-package test;
+package Lab_Java;
 
 import java.util.Scanner;
 
@@ -40,7 +40,7 @@ public class Day_3_TungHuynh {
 
         if (theHour >= 0 && theMinutes >= 0) {
             int theTotalTime = (theHour * 60) + theMinutes;
-            System.out.printf("There are %d minutes in total", theTotalTime);
+            System.out.printf("There are %d minutes in total" , theTotalTime);
         }
 
     }
@@ -51,7 +51,7 @@ public class Day_3_TungHuynh {
         final String CORRECT_PASSWORD = "password123";
 
         int retryCount = 0;
-        while(true) {
+        while (true) {
 
             System.out.print("Please enter your password: ");
             String inputPasswordFromUser = scanner.nextLine();
@@ -60,7 +60,7 @@ public class Day_3_TungHuynh {
                 break;
             }
 
-            if(retryCount == 2) {
+            if (retryCount == 2) {
                 System.out.println("You have exceeded retry times !!! ");
                 break;
             } else {
@@ -80,7 +80,7 @@ public class Day_3_TungHuynh {
         char[] nonFilterArray = convertStringToCharArray(inputString);
 
         for (char element : nonFilterArray) {
-            if (Character.isDigit(element)){
+            if (Character.isDigit(element)) {
                 System.out.print(element);
             }
 
@@ -107,10 +107,10 @@ public class Day_3_TungHuynh {
         String domainName;
 
         int indexOfSeparator = inputString.indexOf(URL_SEPARATOR);
-        int indexOfSingleSeparator = inputString.indexOf(SINGLE_SEPARATOR, indexOfSeparator + 3);
+        int indexOfSingleSeparator = inputString.indexOf(SINGLE_SEPARATOR , indexOfSeparator + 3);
 
         if (indexOfSingleSeparator > 0) {
-            domainName = inputString.substring(indexOfSeparator + 3, indexOfSingleSeparator);
+            domainName = inputString.substring(indexOfSeparator + 3 , indexOfSingleSeparator);
         } else {
             domainName = inputString.substring(indexOfSeparator + 3);
         }
@@ -120,12 +120,12 @@ public class Day_3_TungHuynh {
     }
 
     private static void findDomainNameExtension(String inputString) {
-        
+
         final String EXT_MESSAGE = "The domain name extension";
 
-        boolean isComExtension = inputString.contains(UrlComponent.com.toString());
-        boolean isNetExtension = inputString.contains(UrlComponent.net.toString());
-        boolean isOrgExtension = inputString.contains(UrlComponent.org.toString());
+        boolean isComExtension = inputString.contains("com");
+        boolean isNetExtension = inputString.contains("net");
+        boolean isOrgExtension = inputString.contains("org");
 
         if (isComExtension) {
             System.out.println(EXT_MESSAGE + " is .com");
@@ -134,22 +134,22 @@ public class Day_3_TungHuynh {
         } else if (isOrgExtension) {
             System.out.println(EXT_MESSAGE + " is .org");
         }
-        
+
     }
 
     private static void findWebProtocol(String inputString) {
-        
+
         final String PROTOCOL_MESSAGE = "The web protocol is";
 
-        boolean isHttpsProtocol = inputString.contains(UrlComponent.https.toString());
-        boolean isHttpProtocol = inputString.contains(UrlComponent.http.toString());
-        
+        boolean isHttpsProtocol = inputString.contains("https");
+        boolean isHttpProtocol = inputString.contains("http");
+
         if (isHttpsProtocol) {
             System.out.println(PROTOCOL_MESSAGE + " HTTPS");
-        } else if (isHttpProtocol){
+        } else if (isHttpProtocol) {
             System.out.println(PROTOCOL_MESSAGE + " HTTP");
         }
-        
+
     }
 
     /* Common method */
@@ -165,11 +165,12 @@ public class Day_3_TungHuynh {
     }
 
     enum UrlComponent {
+        com,
         http,
         https,
-        com,
         net,
         org
+
     }
 
 }
